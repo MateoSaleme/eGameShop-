@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda | eGameShop.COM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Signika:wght@300;500&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    -----------------------------------------------------------------------HEADER-------------------------------------------------------------------------------------------------->
+
+  <header class="container-fluid bg-danger d-flex justify-content-center text-center" id="header">
+    <p class="text-light mb-0 p-2 fs-7 fw-bold">El futuro de los videojuegos, en un Marketplace.</p>
+  </header>
+  
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    -----------------------------------------------------------------------NAVBAR-HEADER-------------------------------------------------------------------------------------------------->
+
+  <nav class="navbar navbar-expand-lg navbar-dark p-3" id="navbar-head">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../assets/img/logo.png" alt="logo" width="28" height="28" class="d-inline-flex align-text-top" id="logo-head">
+        <span class="fs-5 text-danger" id="texto-head">eGameShop</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./tienda.html">Tienda</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorias
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="">Accion</a></li>
+              <li><a class="dropdown-item" href="">Aventura</a></li>
+              <li><a class="dropdown-item" href="">Deportes</a></li>
+              <li><a class="dropdown-item" href="">Estrategia</a></li>
+              <li><a class="dropdown-item" href="">De Rol</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" id="input-buscar" type="search" placeholder="Busqueda" aria-label="Search">
+          <button class="btn btn-outline-danger" id="btn-buscar" type="submit">Buscar</button>
+        </form>
+        <a href="./carrito.html"><p class="text-light ms-4 me-2 mb-2 mb-lg-0">
+          Carrito 
+          <br> 
+          P/ <span id="precioTotal"></span> ARS$
+        </p></a>
+        <a href="./carrito.html"><img src="../assets/img/carrito.png" class=" " alt="" height="40px" width="40px"></a>
+      </div>
+    </div>
+  </nav>
+
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    -----------------------------------------------------------------------CARRITO-------------------------------------------------------------------------------------------------->
+
+  <div class="row">
+    <!-- Carrito -->
+    <main class="col-sm-4" id="">
+        <h2>Carrito</h2>
+        <!-- Elementos del carrito -->
+        <section class="products-list" id="carro">
+          
+        </section>
+        <hr>
+        <!-- Precio total -->
+        
+        <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+    </main>
+  </div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    -----------------------------------------------------------------------FOOTER-------------------------------------------------------------------------------------------------->
+
+    <footer>
+        <div class="container_footer">
+          <div class="box_footer">
+            <div class="logo">
+              <img src="../assets/img/logo2.png" alt="footerbrandlogo" id="logo-foot">
+            </div>
+            <div class="terms">
+              <p class="fs-18 fw-normal text-light">El mundo de los videojuegos va mucho más allá del entretenimiento, ¡y es un privilegio ayudar a darle forma! Estamos construyendo un marketplace seguro, accesible y sostenible para todos los jugadores de hoy y mañana.</p>
+            </div>
+          </div>
+          <div class="box_footer">
+            <h2 class="text-light">Redes Sociales</h2>
+            <a href="https://twitter.com/SalemeMateo" class="text-secondary"> <i class="fa-brands fa-twitter-square"></i> Twitter</a>
+            <a href="https://www.facebook.com/matu.saleme/" class="text-secondary"> <i class="fa-brands fa-facebook-square"></i> Facebook</a>
+            <a href="https://www.instagram.com/mateo.saleme/" class="text-secondary"> <i class="fa-brands fa-instagram-square"></i> Instagram</a>
+          </div>
+          <div class="box_footer">
+            <h2 class="text-light">Contacto</h2>
+            <a href="./pags/contacto.html"  class="text-secondary"> <i class="fa-solid fa-envelope-open-text"></i> Formulario</a>
+            <a href="https://api.whatsapp.com/send?phone=5493513418561&text=Vengo%20desde%20eGameShop.com,%20tengo%20una%20duda%20sobre..." class="text-secondary"> <i class="fa-brands fa-whatsapp-square"></i> Whatsapp</a>
+          </div>
+          <div class="box_footer">
+            <h2 class="text-light">Conocenos</h2>
+            <a href="./pags/nosotros.html" class="text-secondary"> <i class="fa-solid fa-people-group"></i> Nosotros</a>
+          </div>
+        </div>
+        <div class="box_copyrights">
+          <hr>
+          <p class="text-secondary">© <b>eGameShop</b> 2022  |  All Rights Reserved</p>
+        </div>
+      </footer>
+    
+      <script src="https://kit.fontawesome.com/3ac3391d4b.js" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="../assets/js/carrito.js"></script>
+    
+    </body>
+    </html>
