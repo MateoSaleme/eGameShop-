@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Signika:wght@300;500&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/carrito.css">
 </head>
 <body>
 
@@ -25,7 +26,7 @@
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     -----------------------------------------------------------------------NAVBAR-HEADER-------------------------------------------------------------------------------------------------->
 
-  <nav class="navbar navbar-expand-lg navbar-dark p-3" id="navbar-head">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark p-3" id="navbar-head">
     <div class="container-fluid">
       <a class="navbar-brand" href="../index.html">
         <img src="../assets/img/logo.png" alt="logo" width="28" height="28" class="d-inline-flex align-text-top" id="logo-head">
@@ -42,29 +43,13 @@
           <li class="nav-item">
             <a class="nav-link" href="./tienda.html">Tienda</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categorias
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="">Accion</a></li>
-              <li><a class="dropdown-item" href="">Aventura</a></li>
-              <li><a class="dropdown-item" href="">Deportes</a></li>
-              <li><a class="dropdown-item" href="">Estrategia</a></li>
-              <li><a class="dropdown-item" href="">De Rol</a></li>
-            </ul>
-          </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" id="input-buscar" type="search" placeholder="Busqueda" aria-label="Search">
-          <button class="btn btn-outline-danger" id="btn-buscar" type="submit">Buscar</button>
-        </form>
         <a href="./carrito.html"><p class="text-light ms-4 me-2 mb-2 mb-lg-0">
-          Carrito 
+          <span class="text-danger fw-bold">Carrito</span> 
           <br> 
           P/ <span id="precioTotal"></span> ARS$
         </p></a>
-        <a href="./carrito.html"><img src="../assets/img/carrito.png" class=" " alt="" height="40px" width="40px"></a>
+        <a href="./carrito.html"><img src="../assets/img/carrito.png" alt="logo-carrito" height="40px" width="40px"></a>
       </div>
     </div>
   </nav>
@@ -72,18 +57,32 @@
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     -----------------------------------------------------------------------CARRITO-------------------------------------------------------------------------------------------------->
 
-  <div class="row">
+  <div class="row row-container">
     <!-- Carrito -->
-    <main class="col-sm-4" id="">
-        <h2>Carrito</h2>
+    <main class="col-sm-5 carrito-container" id="">
+        <h2 class="text-danger fw-bold fs-1 border-1 border-bottom border-secondary pb-3">Carrito</h2>
         <!-- Elementos del carrito -->
-        <section class="products-list" id="carro">
+        <section class="products-list pt-2 mt-4" id="carro">
           
         </section>
         <hr>
         <!-- Precio total -->
+        <div class="row border-top border-bottom border-1 border-secondary pt-4 pb-4">
+          <div class="col text-start">
+            <button id="boton-vaciar" class="btn btn-secondary">Vaciar</button>
+          </div>
+          <div class="col text-end">
+            <p class="text-light">Precio Total:</p>
+          </div>
+          
+          
+        </div>
+        <div class="row mt-4">
+          <div class="col text-end">
+            <button id="boton-comprar" class="btn btn-danger">Comprar</button>
+          </div>
+        </div>
         
-        <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
     </main>
   </div>  
 
@@ -121,12 +120,12 @@
           </div>
           <div class="box_footer">
             <h2 class="text-light">Contacto</h2>
-            <a href="./pags/contacto.html"  class="text-secondary"> <i class="fa-solid fa-envelope-open-text"></i> Formulario</a>
+            <a href="./contacto.html"  class="text-secondary"> <i class="fa-solid fa-envelope-open-text"></i> Formulario</a>
             <a href="https://api.whatsapp.com/send?phone=5493513418561&text=Vengo%20desde%20eGameShop.com,%20tengo%20una%20duda%20sobre..." class="text-secondary"> <i class="fa-brands fa-whatsapp-square"></i> Whatsapp</a>
           </div>
           <div class="box_footer">
             <h2 class="text-light">Conocenos</h2>
-            <a href="./pags/nosotros.html" class="text-secondary"> <i class="fa-solid fa-people-group"></i> Nosotros</a>
+            <a href="./nosotros.html" class="text-secondary"> <i class="fa-solid fa-people-group"></i> Nosotros</a>
           </div>
         </div>
         <div class="box_copyrights">
@@ -139,6 +138,7 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
       <script src="../assets/js/carrito.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     </body>
     </html>

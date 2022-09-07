@@ -13,7 +13,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Signika:wght@300;500&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     
 </head>
 <body>
@@ -27,7 +26,7 @@
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     -----------------------------------------------------------------------NAVBAR-HEADER-------------------------------------------------------------------------------------------------->
 
-  <nav class="navbar navbar-expand-lg navbar-dark p-3" id="navbar-head">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark p-3" id="navbar-head">
     <div class="container-fluid">
       <a class="navbar-brand" href="./index.html">
         <img src="./assets/img/logo.png" alt="logo" width="28" height="28" class="d-inline-flex align-text-top" id="logo-head">
@@ -37,32 +36,22 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">Inicio</a>
+            <a class="nav-link border-1 border-end border-light" href="./index.html"><span class="navLink">Inicio</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./pags/tienda.html">Tienda</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categorias
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="">Accion</a></li>
-              <li><a class="dropdown-item" href="">Aventura</a></li>
-              <li><a class="dropdown-item" href="">Deportes</a></li>
-              <li><a class="dropdown-item" href="">Estrategia</a></li>
-              <li><a class="dropdown-item" href="">De Rol</a></li>
-            </ul>
+            <a class="nav-link border-1 border-end border-light" href="./pags/tienda.html"><span class="navLink">Tienda</span></a>
           </li>
         </ul>
-        <a href="./carrito.html"><p class="text-light ms-4 me-2 mb-2 mb-lg-0">
-          <span class="text-danger fw-bold">Carrito</span> 
-          <br> 
-          P/ <span id="precioTotal"></span> ARS$
-        </p></a>
-        <a href="./pags/carrito.html"><img src="./assets/img/carrito.png" alt="logo-carrito" height="40px" width="40px"></a>
+        <a href="./pags/carrito.html">
+          <p class="text-light ms-3 me-2 mb-2 mb-lg-0 linkCarrito">
+            <span class="text-danger fw-bold">Carrito</span> 
+            <br> 
+            P/ <span id="precioTotal"></span> ARS$
+          </p>
+        </a>
+        <a href="./pags/carrito.html"><img class="imgCarrito" src="./assets/img/carrito.png" alt="logo-carrito" height="40px" width="40px"></a>
       </div>
     </div>
   </nav>
@@ -120,13 +109,11 @@
       </div>
     </header>
     <section class="text-start ps-5 pt-2 p-5" >
-        <div class="slide-container swiper">
+        <div class="slide-container swiper trending">
             <div class="slide-content">
-                <div id="carta"class="card-wrapper swiper-wrapper">
+                <div id="carta" class="card-wrapper swiper-wrapper">
                   
                 </div>
-            <div class="swiper-button-next swiper-navBtn"></div>
-            <div class="swiper-button-prev swiper-navBtn"></div>
         </div>
       </div>
     </section>
@@ -136,7 +123,7 @@
       -----------------------------------------------------------------------OFFERT-IMG-------------------------------------------------------------------------------------------------->
 
     <div class="text-center">
-      <a href="./pags/tienda.html"><img src="./assets/img/offertmenu.jpg" alt="oferta" class="offert-menu"></a>
+      <a href="./pags/tienda.html"><img src="./assets/img/offertmenu.jpg" alt="oferta" class="offert-menu border-top border-bottom border-secondary pt-4 pb-4"></a>
     </div>
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -150,7 +137,7 @@
       </div> 
     </header>
     <section class="text-start ps-5 pt-2 p-5" >
-      <div class="slide-container swiper">
+      <div class="slide-container swiper upcoming">
           <div class="slide-content">
               <div class="card-wrapper swiper-wrapper">
                   <div class="card swiper-slide">
@@ -167,7 +154,7 @@
                       <li><i class="fa-solid fa-2"></i></li>
                       <li><i class="fa-solid fa-2"></i></li>
                     </ul>
-                    <button type="button" class="buy-1 btn btn-danger buy" id="buybtn">PRECOMPRAR</button>
+                    <button type="button" class="buy-1 btn btn-danger buybtn" id="buybtn">PRECOMPRAR</button>
                   </div>
                   <div class="card swiper-slide">
                     <img src="./assets/img/gothamknights.jpg" alt="gothknights">
@@ -183,7 +170,7 @@
                       <li><i class="fa-solid fa-2"></i></li>
                       <li><i class="fa-solid fa-2"></i></li>
                     </ul>
-                    <button type="button" class="buy-1 btn btn-danger buy" id="buybtn">PRECOMPRAR</button>
+                    <button type="button" class="buy-1 btn btn-danger buybtn" id="buybtn">PRECOMPRAR</button>
                   </div>
                   <div class="card swiper-slide">
                     <img src="./assets/img/stalker2.jpg" alt="stalker2">
@@ -199,7 +186,7 @@
                       <li><i class="fa-solid fa-2"></i></li>
                       <li><i class="fa-solid fa-3"></i></li>
                     </ul>
-                    <button type="button" class="buy-1 btn btn-danger buy" id="buybtn">PRECOMPRAR</button>
+                    <button type="button" class="buy-1 btn btn-danger buybtn" id="buybtn">PRECOMPRAR</button>
                   </div>
                   <div class="card swiper-slide">
                     <img src="./assets/img/codmw2.jpg" alt="codmw2">
@@ -215,12 +202,10 @@
                       <li><i class="fa-solid fa-2"></i></li>
                       <li><i class="fa-solid fa-2"></i></li>
                     </ul>
-                    <button type="button" class="buy-1 btn btn-danger buy" id="buybtn">PRECOMPRAR</button>
+                    <button type="button" class="buy-1 btn btn-danger buybtn" id="buybtn">PRECOMPRAR</button>
                   </div> 
               </div>
           </div>
-          <div class="swiper-button-next swiper-navBtn"></div>
-          <div class="swiper-button-prev swiper-navBtn"></div>
       </div>
   </section>
   
@@ -228,7 +213,7 @@
     -----------------------------------------------------------------------OFFERT-IMG-------------------------------------------------------------------------------------------------->
   
   <div class="text-center">
-    <a href="./pags/tienda.html"><img src="./assets/img/offertmenu2.jpg" alt="oferta-2" class="offert-menus border-bottom border-3 border-secondary"></a>
+    <a href="./pags/tienda.html"><img src="./assets/img/offertmenu2.jpg" alt="oferta-2" class="offert-menus border-top border-bottom border-secondary pt-4 pb-4"></a>
   </div>  
 
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -282,26 +267,6 @@
   <script src="./assets/js/main.js"></script>
   <script src="./assets/js/index.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script type="module">
-    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
-  
-    const swiper = new Swiper(".slide-content", {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    loop: true,
-    loopedSlidesLimit: true,
-    slideToClickedSlide: false,
-    simulateTouch: false,
-    centerSlide: 'false',
-    fade: 'false',
-    grabCursor: 'true',
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-
-  </script>
   <script>
     let url = 'https://jsonplaceholder.typicode.com/post/1/comments'
     fetch(url)

@@ -25,7 +25,7 @@
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     -----------------------------------------------------------------------NAVBAR-HEADER-------------------------------------------------------------------------------------------------->
 
-  <nav class="navbar navbar-expand-lg navbar-dark p-3" id="navbar-head">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark p-3" id="navbar-head">
     <div class="container-fluid">
       <a class="navbar-brand" href="../index.html">
         <img src="../assets/img/logo.png" alt="logo" width="28" height="28" class="d-inline-flex align-text-top" id="logo-head">
@@ -35,36 +35,26 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="../index.html">Inicio</a>
+            <a class="nav-link border-1 border-end border-light" href="../index.html"><span class="navLink">Inicio</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./tienda.html">Tienda</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categorias
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="">Accion</a></li>
-              <li><a class="dropdown-item" href="">Aventura</a></li>
-              <li><a class="dropdown-item" href="">Deportes</a></li>
-              <li><a class="dropdown-item" href="">Estrategia</a></li>
-              <li><a class="dropdown-item" href="">De Rol</a></li>
-            </ul>
+            <a class="nav-link border-1 border-end border-light" href="./tienda.html"><span class="navLink">Tienda</span></a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" id="input-buscar" type="search" placeholder="Busqueda" aria-label="Search">
-          <button class="btn btn-outline-danger" id="btn-buscar" type="submit">Buscar</button>
-        </form>
-        <a href="./carrito.html"><p class="text-light ms-4 me-2 mb-2 mb-lg-0">
+        
+        <a href="./carrito.html"><p class="text-light ms-3 me-2 mb-2 mb-lg-0 linkCarrito">
           <span class="text-danger fw-bold">Carrito</span> 
           <br> 
           P/ <span id="precioTotal"></span> ARS$
         </p></a>
-        <a href="./carrito.html"><img src="../assets/img/carrito.png" class=" " alt="" height="40px" width="40px"></a>
+        <a href="./carrito.html"><img src="../assets/img/carrito.png" class="imgCarrito" alt="" height="40px" width="40px"></a>
+        <form class="d-flex ">
+          <input class="form-control ms-4 me-2" id="input-buscar" type="search" placeholder="Busqueda" aria-label="Search">
+          <button class="btn btn-outline-danger" id="btn-buscar" type="submit">Buscar</button>
+        </form>
       </div>
     </div>
   </nav>
@@ -76,12 +66,12 @@
       <h1 class="text-start">Todos Nuestros Juegos</h1>
       <div class="store-wrapper">
         <div class="category_list">
-          <a href="" class="category_item item-active" >Todo</a>
-          <a href="" class="category_item" id="actionBtn">Accion</a>
-          <a href="" class="category_item" >Aventura</a>
-          <a href="" class="category_item" >Deportes</a>
-          <a href="" class="category_item" >Estrategia</a>
-          <a href="" class="category_item" >De Rol</a>
+          <a href="" class="category_item item-active" id="allBtn" category="all">Todo</a>
+          <a href="" class="category_item" id="accionBtn" category="accion">Accion</a>
+          <a href="" class="category_item" id="aventBtn" category="aventura">Aventura</a>
+          <a href="" class="category_item" id="deporteBtn" category="deportes">Deportes</a>
+          <a href="" class="category_item" id="estrateBtn" category="estrategia">Estrategia</a>
+          <a href="" class="category_item" id="rolBtn" category="rol">De Rol</a>
         </div>
         <section class="products-list" id="productos">
           

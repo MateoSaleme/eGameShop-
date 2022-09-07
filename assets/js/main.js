@@ -30,20 +30,22 @@ const listaProd = [
     new Producto(14, "Elden Ring", 6500, "rol", "../assets/img/eldenringshop.jpg"),
     new Producto(15, "The Elder Scrolls V: Skyrim", 2000, "rol", "../assets/img/skyrimshop.jpg"),
     new Producto(16, "Ready Or Not", 899, "accion", "../assets/img/readyornotshop.jpg"),
-    new Producto(17, "Resident Evil Village", 2299, "accion", "./assets/img/revillage.jpg"),
-    new Producto(18, "Dying light 2", 1920, "accion", "./assets/img/dyinglight2.jpg")
+    new Producto(17, "Resident Evil <br> Village", 2299, "accion", "./assets/img/revillage.jpg"),
+    new Producto(18, "Dying light 2", 1920, "accion", "./assets/img/dyinglight2.jpg"),
+    new Producto(19, "Elden Ring", 6500, "rol", "./assets/img/eldenring.jpg"),
+    new Producto(20, "Ready or Not", 899, "accion", "./assets/img/readyornot.jpg"),
 ]
 
 //cargando los productos en html
 
-const cargarProd2 = (productos)=>{
+const cargarProd = (productos)=>{
     localStorage.setItem("prod", JSON.stringify(listaProd));
     const divProd=document.getElementById("productos");
     divProd.innerHTML=""
     productos.forEach((producto)=>{
         if (producto.id < 17) {
             divProd.innerHTML+=`
-        <div class="product-item">
+        <div class="product-item" category=${producto.categoria}>
             <img id="itemimagen${producto.id}" src=${producto.imagen} alt="">
             <p class="text-danger" >Cod.#<span id="itemId${producto.id}">${producto.id}</span></p>
             <h6 id="itemnombre${producto.id}">${producto.nombre}</h6>
@@ -55,14 +57,84 @@ const cargarProd2 = (productos)=>{
                 <button type="button" class="buy-2 btn btn-danger buy" id="buybtn${producto.id}">COMPRAR</button>
             </div>
         </div>`
-
+            
         }
-        
     })
     
 };
 
-cargarProd2(listaProd);
+cargarProd(listaProd);
+
+let cat = "";
+
+const cateAccion = document.getElementById("accionBtn");
+const cateAvent = document.getElementById("aventBtn");
+const cateDepor = document.getElementById("deporteBtn");
+const cateEstra = document.getElementById("estrateBtn");
+const cateRol = document.getElementById("rolBtn");
+cateAccion.addEventListener("click", (e)=>{
+    cat = "accion";
+    e.preventDefault();
+    console.log(cat)
+    filtrarCat(cat);
+})
+cateAvent.addEventListener('click', (e)=>{
+    cat = "aventura";
+    e.preventDefault();
+    console.log(cat)
+    filtrarCat(cat);
+})
+cateDepor.addEventListener('click', (e)=>{
+    cat = "deportes";
+    e.preventDefault();
+    console.log(cat)
+    filtrarCat(cat);
+})
+cateEstra.addEventListener('click', (e)=>{
+    cat = "estrategia";
+    e.preventDefault();
+    console.log(cat)
+    filtrarCat(cat);
+})
+cateRol.addEventListener('click', (e)=>{
+    cat = "rol";
+    e.preventDefault();
+    console.log(cat)
+    filtrarCat(cat);
+})
+
+function filtrarCat(cat){
+    const filtrar = listaProd.filter((producto)=>producto.categoria.indexOf(cat)!==-1);
+    cargarProd(filtrar);
+    filtrar.forEach((cate) => {
+        console.log(filtrar.id)
+        for (let i = 1; i <= listaProd.length; i++) {
+           if(i==cate.id){
+            const agregarProdCate = document.getElementById("buybtn"+i);
+            agregarProdCate.addEventListener("click", (e)=>{
+                let id = document.getElementById("itemId"+i).textContent;
+                let cantidad = document.getElementById("prodNr"+i).textContent;
+                let precio = document.getElementById("itemPrecio"+i).textContent;
+                let nombre = document.getElementById("itemnombre"+i).textContent;
+                let imagen = document.getElementById("itemimagen"+i).getAttribute("src");
+                e.preventDefault();
+                agregarCarrito(id,cantidad,precio,nombre,imagen);
+                mostrarPrecio();
+                console.log(agregarCarrito);
+                console.log(i);
+            });
+            }
+        
+        }
+        
+    }
+    
+    )
+        
+}
+
+
+
 
 //filtrado y busqueda de productos
 
@@ -83,7 +155,6 @@ function filtrarProd(inputProd){
     cargarProd(filtrar);
 };
 
-
 //carrito de compras
 
 class ProdCarro {
@@ -100,17 +171,21 @@ const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 console.log(carrito)
 mostrarPrecio();
 
+//botones para agregar y sumar o restar productos
+
+
+
 for (let i = 1; i <= listaProd.length; i++) {
     const agregarProd = document.getElementById("buybtn"+i);
-    const sumarProd = document.getElementById("sumarProd"+i);
-    const restarProd = document.getElementById("restarProd"+i);
-    sumarProd.addEventListener("click", ()=>{
+    const sumarProduc = document.getElementById("sumarProd"+i);
+    const restarProduc = document.getElementById("restarProd"+i);
+    sumarProduc.addEventListener("click", ()=>{
         let cantidad=document.getElementById("prodNr"+i).textContent;
         cantidad=parseInt(cantidad);
         cantidad+=1;
         document.getElementById("prodNr"+i).textContent=cantidad;
     });
-    restarProd.addEventListener("click", ()=>{
+    restarProduc.addEventListener("click", ()=>{
         let cantidad=document.getElementById("prodNr"+i).textContent;
         cantidad=parseInt(cantidad);
         if(cantidad<=1){
@@ -133,8 +208,11 @@ for (let i = 1; i <= listaProd.length; i++) {
         e.preventDefault();
         agregarCarrito(id,cantidad,precio,nombre,imagen);
         mostrarPrecio();
+        console.log(agregarCarrito)
     });
 };
+
+//localstorage de carrito
 
 function agregarCarrito(id,cantidad,precio,nombre,imagen) {
     let prodencarrito = carrito.find(producto=>producto.id==id)
@@ -148,6 +226,8 @@ function agregarCarrito(id,cantidad,precio,nombre,imagen) {
     console.log(carrito);
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
+
+//imprimir precio en el carrido del header
 
 function mostrarPrecio(){
     let preciototal=0;
