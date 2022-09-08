@@ -27,7 +27,7 @@ else{
         localstoragearr.forEach((producto)=>{
             preciototalprod=Number(producto.precio)*Number(producto.cantidad);
             divProd.innerHTML+=`
-            <div class="row product-item border-1 border-bottom border-light">
+            <div class="row product-carrito">
                 <div class="col">
                     <img id="itemimagen${producto.id}" src=${producto.imagen} alt="">
                 </div>
@@ -38,12 +38,10 @@ else{
                     <h6 id="itemnombre${producto.id}">${producto.nombre}</h6>
                 </div>
                 <div class="col">
-                    <button type="button" class="btn btn-secondary mb-1 mt-1" id="restarProd${producto.id}">-</button>
                     <span class="mx-4 p-1 cant" id="prodNr${producto.id}">${producto.cantidad}</span>
-                    <button type="button" class="btn btn-secondary mb-1 mt-1" id="sumarProd${producto.id}">+</button>
                 </div>
                 <div class="col">
-                    <p class="text-danger">Total: `+preciototalprod+`<span id="total"></span>ARS$</p>
+                    <p class="text-danger">`+preciototalprod+`<span id="total"></span> ARS$</p>
                 </div>
                 <div class="col">
                     <button id="boton-eliminar${producto.id}" class="btn btn-danger">X</button>
@@ -62,6 +60,38 @@ else{
         botonvaciar.addEventListener("click",()=>{
             localStorage.clear();
             window.location.reload();
-    });
+        });
+        function mostrarPrecio(){
+            let preciototal=0;
+            carrito.forEach(carr => {
+                listaProd.forEach(prod => {
+                    if (carr.id==prod.id) {   
+                        preciototal+=carr.cantidad*prod.precio;
+                        document.getElementById("precioTotalCarro").textContent = preciototal;
+                        console.log("Precio total:"+preciototal);
+                        console.log(carr.id,carr.cantidad,prod.nombre,prod.precio);
+                    }     
+                });        
+            });
+        };
     cargarProd(localstoragearr);
 }
+
+const buyBtn = document.getElementById("boton-comprar")
+buyBtn.addEventListener("click", ()=>{
+    if(localStorage.getItem("carrito")===null){
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'No estas llevando ningun producto.',
+        })
+    }
+    else{
+        Swal.fire({
+            icon: 'success',
+            title: '¡Felicidades por su compra!',
+            text: 'Muchas gracias por confiar en nosotros.',
+        })
+    }
+})
+

@@ -27,13 +27,26 @@ const listaProd = [
     new Producto(11, "Age of Empires 2", 300, "estrategia", "../assets/img/aoe2shop.jpg"),
     new Producto(12, "Borderlands 3", 3200, "accion", "../assets/img/borderlands3shop.jpg"),
     new Producto(13, "Days Gone", 4000, "accion", "../assets/img/daysgoneshop.jpg"),
-    new Producto(14, "Elden Ring", 6500, "rol", "../assets/img/eldenringshop.jpg"),
+    new Producto(14, "Resident Evil 7: Biohazard", 2500, "accion", "../assets/img/re6shop.jpg"),
     new Producto(15, "The Elder Scrolls V: Skyrim", 2000, "rol", "../assets/img/skyrimshop.jpg"),
-    new Producto(16, "Ready Or Not", 899, "accion", "../assets/img/readyornotshop.jpg"),
-    new Producto(17, "Resident Evil <br> Village", 2299, "accion", "./assets/img/revillage.jpg"),
-    new Producto(18, "Dying light 2", 1920, "accion", "./assets/img/dyinglight2.jpg"),
-    new Producto(19, "Elden Ring", 6500, "rol", "./assets/img/eldenring.jpg"),
-    new Producto(20, "Ready or Not", 899, "accion", "./assets/img/readyornot.jpg"),
+    new Producto(16, "Borderlands 3", 3500, "accion", "../assets/img/borderlands3shop.jpg"),
+    new Producto(17, "Ready Or Not", 899, "accion", "../assets/img/readyornotshop.jpg"),
+    new Producto(18, "Resident Evil: Village", 2299, "accion", "../assets/img/revillageshop.jpg"),
+    new Producto(19, "Elden Ring", 6500, "rol", "../assets/img/eldenringshop.jpg"),
+    new Producto(20, "Dying light 2", 1920,"aventura", "../assets/img/dyinglight2shop.jpg"),
+    new Producto(21, "Forspoken", 6899, "rol", "../assets/img/forspokenshop.jpg"),
+    new Producto(22, "Gotham Knights", 4999, "accion", "../assets/img/gothamknightsshop.jpg"),
+    new Producto(23, "S.T.A.L.K.E.R 2", 2899, "aventura", "../assets/img/stalker2shop.jpg"),
+    new Producto(24, "Call Of Duty: MWII", 6780, "accion", "../assets/img/codmw2shop.jpg"),
+
+    new Producto(25, "Resident Evil <br> Village", 2299, "accion", "./assets/img/revillage.jpg"),
+    new Producto(26, "Dying light 2", 1920, "aventura", "./assets/img/dyinglight2.jpg"),
+    new Producto(27, "Elden Ring", 6500, "rol", "./assets/img/eldenring.jpg"),
+    new Producto(28, "Ready Or Not", 899, "accion", "./assets/img/readyornot.jpg"),
+    new Producto(29, "Forspoken", 6899, "rol", "./assets/img/forspoken.jpg"),
+    new Producto(30, "Gotham <br> Knights", 4999, "accion", "./assets/img/gothamknights.jpg"),
+    new Producto(31, "S.T.A.L.K.E.R 2", 2899, "aventura", "./assets/img/stalker2.jpg"),
+    new Producto(32, "Call Of Duty <br> MWII", 6780, "accion", "./assets/img/codmw2.jpg"),
 ]
 
 //cargando los productos en html
@@ -43,7 +56,7 @@ const cargarProd = (productos)=>{
     const divProd=document.getElementById("productos");
     divProd.innerHTML=""
     productos.forEach((producto)=>{
-        if (producto.id < 17) {
+        if (producto.id < 25) {
             divProd.innerHTML+=`
         <div class="product-item" category=${producto.categoria}>
             <img id="itemimagen${producto.id}" src=${producto.imagen} alt="">
@@ -52,7 +65,7 @@ const cargarProd = (productos)=>{
             <p class="text-danger"><span id="itemPrecio${producto.id}">${producto.precio}</span> ARS$</p>
             <div id="addToCarritoBtn" class="cant-btn text-center">
                 <button type="button" class="btn btn-secondary mb-1 mt-1" id="restarProd${producto.id}">-</button>
-                <span class="mx-4 p-1" id="prodNr${producto.id}">1</span>
+                <span class="mx-4 p-1 prodNr" id="prodNr${producto.id}">1</span>
                 <button type="button" class="btn btn-secondary mb-1 mt-1" id="sumarProd${producto.id}">+</button>
                 <button type="button" class="buy-2 btn btn-danger buy" id="buybtn${producto.id}">COMPRAR</button>
             </div>

@@ -16,7 +16,7 @@
     border-radius: 7px;
 }
 
-.product-item{
+.product-carrito{
     border: 0;
     box-sizing: border-box;
     display: flex;
@@ -25,10 +25,12 @@
     flex-shrink: 0;
     text-align: center;
     margin: 10px;
-    padding-bottom: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgb(43, 43, 43);
 }
 
-.product-item img{
+.product-carrito img{
     width: calc(250px - 100px);
     padding: 0 8px 0 0;
     white-space: nowrap;
@@ -36,11 +38,11 @@
     text-overflow: ellipsis;
 }
 
-.product-item p{
+.product-carrito p{
     color: white;
 }
 
-.product-item h6{
+.product-carrito h6{
     color: white;
 }
 
